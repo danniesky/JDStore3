@@ -17,3 +17,565 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
   @import "font-awesome";
+
+//--Footer always on the bottom
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 100px;
+  }
+
+//---------Navbar---------
+
+.navbar-default {
+    background-color: white;  //背景颜色
+    border-color: white; //底线颜色
+    margin-bottom: 0;  //底部 margin 不撑开距离
+    border-radius: 0;  //圆角为0
+}
+
+.navbar-default .navbar-brand {
+    background-color:  white;  //home happy 背景颜色
+    padding: 10px 15px; //上下10px，左右15px
+    line-height: 30px;  //文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    background-color: #233140; //鼠标放置在链接上的文字颜色
+    background-color: transparent;  //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a {
+        background-color: white; //右端颜色
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+        background-color: #233140;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FF6F00; //product字体颜色
+    background-color: white; //product背景颜色
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #233140;
+  }
+
+
+
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+/* user avater on navbar */
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
+
+   h2{
+     font-size: 10px;
+     letter-spacing: 10px;
+     margin-bottom: 50px;
+     font-weight: 10;
+     text-align: center;
+     padding-top: 12px; //---sepatate pic and text---//
+   }
+
+
+//----test----//
+.block-content {
+    text-align: center;
+    letter-spacing: .01em;
+    padding-top: 2.8125rem;
+    padding-bottom: 2.8125rem;
+    font-size: 20px;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-title{
+  font-size: 40px;
+  letter-spacing: 10px;
+  margin-bottom: 50px;
+  font-weight: 10;
+  text-align: center;
+  padding-top: 12px; //---sepatate pic and text---//
+}
+
+.block-wired-differently {
+    background: #fff url(//www.jibo.com/sites/all/themes/jibo_com/images/dot-pattern.png) 50% 0 repeat
+}
+
+.block-wired-differently .block-title span:nth-child(2) {
+    opacity: 0;
+    transform: translate3d(0%,-100%,0);
+    color: #00d4f0;
+    display: inline-block;
+    position: relative
+}
+
+.block-wired-differently .content-wrapper {
+    background: #fff;
+    position: relative
+}
+
+@media screen and (min-width: 40em) {
+    .block-wired-differently .content-wrapper {
+        padding-left:122.4px;
+        padding-right: 122.4px
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .block-wired-differently .content-wrapper {
+        padding-left:204px;
+        padding-right: 204px
+    }
+}
+
+.block-wired-differently .content-wrapper::before,.block-wired-differently .content-wrapper::after {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 136px
+}
+
+@media screen and (min-width: 40em) {
+    .block-wired-differently .content-wrapper::before,.block-wired-differently .content-wrapper::after {
+        content:''
+    }
+}
+
+.block-wired-differently .content-wrapper::before {
+    background: #fff url(//www.jibo.com/sites/all/themes/jibo_com/images/dot-pattern-edge.png) repeat-y;
+    transform: rotateY(-180deg);
+    left: -9px
+}
+
+@media screen and (min-width: 40em) {
+    .block-wired-differently .content-wrapper::before {
+        content:'';
+        transform: rotateY(-180deg) translateX(40%)
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .block-wired-differently .content-wrapper::before {
+        content:'';
+        transform: rotateY(-180deg) translateX(80%)
+    }
+}
+
+.block-wired-differently .content-wrapper::after {
+    background: #fff url(//www.jibo.com/sites/all/themes/jibo_com/images/dot-pattern-edge.png) repeat-y;
+    right: -9px;
+    transform: translateX(80%)
+}
+
+@media screen and (min-width: 40em) {
+    .block-wired-differently .content-wrapper::after {
+        transform:translateX(40%)
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .block-wired-differently .content-wrapper::after {
+        transform:translateX(80%)
+    }
+}
+
+
+
+
+//---learn---//
+
+.home-sec {
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.home-sec:after,.home-sec:before {
+    content: " ";
+    display: table
+}
+
+.home-sec:after {
+    clear: both
+}
+
+.home-sec .sec-hd {
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    margin: 68px auto 40px;
+    text-align: center
+}
+
+.home-sec .sec-hd:after,.home-sec .sec-hd:before {
+    content: " ";
+    display: table
+}
+
+.home-sec .sec-hd:after {
+    clear: both
+}
+
+.home-sec .sec-hd .sec-title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 300;
+    color: #616161;
+    text-transform: uppercase;
+    line-height: 30px
+}
+
+
+
+//--
+.g-home-app {
+    padding-bottom: 100px;
+    color: #ffffff;
+    font-size: 18px;
+    background: url('https://ws4.sinaimg.cn/large/006tKfTcly1ffzy6f8xxhj31hc0hs0ud.jpg');
+}
+
+.g-home-app h2 {
+    padding-bottom: 0;
+}
+
+.g-home-app .view-all {
+    margin: 25px auto 0;
+}
+
+.g-home-app img {
+    width: 192px;
+    height: 192px;
+    display: block;
+    margin: 60px auto 33px;
+    border-radius: 48px;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.g-home-app p {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.g-home-app p:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+//---------Navbar---------
+
+.navbar-default {
+    background-color: white;  //背景颜色
+    border-color: white; //底线颜色
+    margin-bottom: 0;  //底部 margin 不撑开距离
+    border-radius: 0;  //圆角为0
+}
+
+.navbar-default .navbar-brand {
+    background-color:  white;  //home happy 背景颜色
+    padding: 10px 15px; //上下10px，左右15px
+    line-height: 30px;  //文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    background-color: #233140; //鼠标放置在链接上的文字颜色
+    background-color: transparent;  //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a {
+        background-color: white; //右端颜色
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+        background-color: #233140;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FF6F00; //product字体颜色
+    background-color: white; //product背景颜色
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #233140;
+  }
+
+  //---------carousel-inner---------
+
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+  }
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+
+  .title{
+      font-size: 60px;
+      letter-spacing: 10px;
+      margin-top: 80px;
+      margin-bottom: 50px;
+      font-weight: 700;
+      text-align: center;
+  }
+
+  .lead {
+        font-size: 30px;
+        margin-bottom: 250px;
+        padding: 10px 30px;
+        border-radius: 4px;
+        letter-spacing: -1px;
+  }
+
+  .descri{
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+
+//-----热门服务----//
+  section {
+      padding: 100px 0;
+      background: #E0E0E0;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+
+  }
+
+.col-sm-4 :hover { //----transform-----//
+  -moz-transform: scale(1.05);
+ -ms-transform: scale(1.05);
+ -webkit-transform: scale(1.05);
+ transform: scale(1.05);
+ transition: -webkit-transform 1s;
+ transition: transform 1s;
+ transition: transform 1s, -webkit-transform 1s;
+}
+
+
+  #portfolio * {
+      z-index: 2;
+  }
+
+  section h2 {
+      margin: 0;
+      font-size: 2em;
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  }
+  #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
+      margin-top: -12px;
+  }
+
+  #portfolio .portfolio-item .portfolio-link .caption .caption-content {
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      font-size: 20px;
+      text-align: center;
+      top: 50%;
+      margin-top: -12px;
+      color: #fff;
+  }
+
+  #portfolio .portfolio-item .portfolio-link {
+      display: block;
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto;
+  }
+
+  .portfolio-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+
+  //-----顾客留言----//
+
+.lp-advance {
+  display: block;
+  width: 100%;
+  height: 550px;
+  min-width: 960px;
+  background: #fff;
+  background-color:#F5F5F5;
+  background-position: center top;
+  background-size: cover
+}
+
+.lp-advance .feature-title {
+  margin-bottom: 50px;
+  letter-spacing: 3px
+}
+
+.lp-advance .feature-title h2 {
+  font-size: 2.428em
+}
+
+.lp-advance .feature-title p {
+  color: #444;
+  margin-bottom: 40px;
+  text-align: center
+}
+
+.lp-advance .content-3 {
+  display: block;
+  width: 960px;
+  height: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  padding-top: 50px
+}
+
+.lp-advance .content-3 .feature-block {
+  display: block;
+  border-style: none;
+  border-radius: 0;
+  width: 290px;
+  position: relative;
+  margin: 20px 15px 0;
+  float: left
+}
+
+.lp-advance .content-3 .feature-block h3 {
+  font-size: 1.2em;
+  line-height: 28px;
+  margin-top: 20px;
+  color: #333
+}
+
+.lp-advance .content-3 .feature-block p {
+  line-height: 24px;
+  width: 260px;
+  margin-top: 30px;
+  margin-left: 20px;
+  font-size: 1em;
+  color: #666;
+  text-align: center
+}
+
+.lp-advance .content-3 .feature-block img {
+  width: 100px;
+  height: 100px
+}
+
+@media (max-width: 960px) {
+  .lp-advance {
+    min-width: 100%;
+    height: 850px
+  }
+
+  .lp-advance .content-3 {
+    width: 100%;
+    height: auto;
+    padding-top: 30px
+  }
+
+  .lp-advance .content-3 .feature-block {
+    width: 290px;
+    margin: 0 auto;
+    float: none
+  }
+
+  .lp-advance .content-3 .feature-block h3 {
+    margin-top: 10px
+  }
+
+  .lp-advance .content-3 .feature-block p {
+    margin: 0 auto 35px
+  }
+}
+
+
+  //---------Footer---------
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 70px;
+    background-color: #233140;
+
+    p {
+      color: white;
+      margin-top: 20px;
+      }
+
+  }
