@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :categories
   end
 
   resources :products do
@@ -19,5 +20,5 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
-  root 'products#index'
+  root 'welcome#index'
 end
