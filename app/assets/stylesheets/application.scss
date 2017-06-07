@@ -13,114 +13,43 @@
  *= require_tree .
  *= require_self
  */
-
-  @import "bootstrap-sprockets";
-  @import "bootstrap";
-  @import "font-awesome";
-
-//--Footer always on the bottom
-  html {
-    position: relative;
-    min-height: 100%;
-  }
-
-  body {
-    /* Margin bottom by footer height */
-    margin-bottom: 100px;
-  }
-
-//---------Navbar---------
-
-.navbar-default {
-    background-color: white;  //背景颜色
-    border-color: white; //底线颜色
-    margin-bottom: 0;  //底部 margin 不撑开距离
-    border-radius: 0;  //圆角为0
-}
-
-.navbar-default .navbar-brand {
-    background-color:  white;  //home happy 背景颜色
-    padding: 10px 15px; //上下10px，左右15px
-    line-height: 30px;  //文字行高
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    background-color: #233140; //鼠标放置在链接上的文字颜色
-    background-color: transparent;  //鼠标放置在链接上的背景颜色，这里设为透明
-}
-
-.navbar-default .navbar-nav > li > a {
-        background-color: white; //右端颜色
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-        background-color: #233140;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #FF6F00; //product字体颜色
-    background-color: white; //product背景颜色
-}
-
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover {
-    background-color: #233140;
-  }
-
-
-
-
-
-
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
-
-/* user avater on navbar */
-.round-image-50 {
-    background-color: white;
-    border: 1px solid #d9d9d9;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    text-align: center;
-    img { width: 100% }
-}
-
-
 html {
-  position: relative;
   min-height: 100%;
+  position: relative;//设定为相对位置
 }
 
 body {
   /* Margin bottom by footer height */
   margin-bottom: 100px;
+  overflow-x: hidden; //裁切页面内容，超出视窗不显示
+  letter-spacing: 1px; //文字间距
+  font-size: 14px; //文字大小
+
+  a {
+    text-decoration:none !important; //文字连结移除底线
+  }
+
+
+  /*===== 基础栏位设定 ======*/
+  .width-25 {
+    width: 25%;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+
+  .width-75 {
+    width: 75%;
+  }
+
+  .width-100 {
+    width: 100%;
+  }
 }
 
 
@@ -133,6 +62,61 @@ body {
      padding-top: 12px; //---sepatate pic and text---//
    }
 
+
+   /*===== Navbar 导览列 ======*/
+   .navbar-default {
+     background: rgba(0,0,0,0.5); //半透明背景
+
+     /* 文字连结 */
+     a {
+       color: #fff !important;
+     }
+
+     /* 连结-鼠标效果 */
+     a:hover,
+     a:active,
+     a:focus {
+       color: #0070DE !important;
+     }
+
+   /*===== Logo ======*/
+.logo-box {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+
+
+/*===== Dropdown ======*/
+   .dropdown-menu{
+     background-color: #fff;
+     min-width: 175px;
+
+     /* 连结 */
+     a {
+       color: #000 !important;
+       padding: 8px 17px;
+     }
+
+     /* 连结-鼠标滑动效果 */
+     a:hover {
+       background-color: #f0f0f0;
+       color: #0070DE !important;
+     }
+   }
+
+   /* 下拉选单三角箭头 */
+   .dropdown-menu:before {
+     content: "";
+     border-bottom: 10px solid #fff;
+     border-right: 10px solid transparent;
+     border-left: 10px solid transparent;
+     position: absolute;
+     top: -10px;
+     right: 16px;
+     z-index: 10;
+   }
+}
 
 //----test----//
 .block-content {
@@ -248,50 +232,14 @@ body {
     margin-left: auto
 }
 
-.home-sec:after,.home-sec:before {
-    content: " ";
-    display: table
-}
 
-.home-sec:after {
-    clear: both
-}
+//---------blue------//
 
-.home-sec .sec-hd {
-    width: 1226px;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    margin: 68px auto 40px;
-    text-align: center
-}
-
-.home-sec .sec-hd:after,.home-sec .sec-hd:before {
-    content: " ";
-    display: table
-}
-
-.home-sec .sec-hd:after {
-    clear: both
-}
-
-.home-sec .sec-hd .sec-title {
-    margin: 0;
-    font-size: 30px;
-    font-weight: 300;
-    color: #616161;
-    text-transform: uppercase;
-    line-height: 30px
-}
-
-
-
-//--
 .g-home-app {
     padding-bottom: 100px;
     color: #ffffff;
     font-size: 18px;
-    background: url('https://ws4.sinaimg.cn/large/006tKfTcly1ffzy6f8xxhj31hc0hs0ud.jpg');
+    background: url('https://ws2.sinaimg.cn/large/006tNc79gy1fg83vir70xj318g0p0n0e.jpg');
 }
 
 .g-home-app h2 {
@@ -381,12 +329,13 @@ body {
   /* Hide the carousel text when the screen is less than 600 pixels wide */
 
   .title{
-      font-size: 60px;
+      font-size: 80px;
       letter-spacing: 10px;
       margin-top: 80px;
-      margin-bottom: 50px;
+      margin-bottom: 300px;
       font-weight: 700;
-      text-align: center;
+      text-align: left;
+      padding: 10px 30px;
   }
 
   .lead {
@@ -407,13 +356,18 @@ body {
   }
 
 
-//-----热门服务----//
-  section {
+//-----激活机器人----//
+   .product-items-box{
       padding: 100px 0;
       background: #E0E0E0;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
 
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+      background: url('https://ws1.sinaimg.cn/large/006tNc79gy1fg83rl9lpzj30ou0ougrh.jpg');
   }
+
+.text-center{
+  color:white;
+}
 
 .col-sm-4 :hover { //----transform-----//
   -moz-transform: scale(1.05);
@@ -425,44 +379,18 @@ body {
  transition: transform 1s, -webkit-transform 1s;
 }
 
-
-  #portfolio * {
-      z-index: 2;
-  }
-
   section h2 {
       margin: 0;
       font-size: 2em;
       font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 
   }
-  #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
-      margin-top: -12px;
-  }
-
-  #portfolio .portfolio-item .portfolio-link .caption .caption-content {
-      position: absolute;
-      width: 100%;
-      height: 20px;
-      font-size: 20px;
-      text-align: center;
-      top: 50%;
-      margin-top: -12px;
-      color: #fff;
-  }
-
-  #portfolio .portfolio-item .portfolio-link {
-      display: block;
-      position: relative;
-      max-width: 400px;
-      margin: 0 auto;
-  }
 
   .portfolio-item {
     padding-top: 15px;
     padding-bottom: 15px;
+    color: white;
   }
-
 
   //-----顾客留言----//
 
@@ -571,11 +499,314 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 70px;
-    background-color: #233140;
+    background-color: white;
 
     p {
-      color: white;
+      color: black;
       margin-top: 20px;
       }
 
   }
+
+
+
+//----test-----
+// 数量输入框
+.product-page .quantity-input {
+  color: #333;
+  text-align: center;
+  width: 60px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+}
+
+.buy-quantity {
+  // 加减按钮
+  .quantity-minus,
+  .quantity-plus {
+    pointer-events: auto;
+  }
+}
+
+.product-page .product-image {
+  box-shadow: 0 29px 32px -20px rgba(0,0,0,0.5);
+  margin: 20px auto;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.product-image img {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/*===== 商品列表区块设置 ======*/
+.product-box {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 0 100px 0;
+
+  a {
+    color: #666; //连结字体颜色
+  }
+
+  /* 图片-鼠标滑动效果 */
+  a:hover {
+    color: #0070DE !important;
+    img {
+      opacity: 0.75;
+    }
+  }
+
+  /* 按钮 */
+  .btn {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+  }
+
+  /* 按钮-鼠标效果 */
+  .btn:hover,
+  .btn:focus {
+    color: #0070DE;
+  }
+
+  /* 广告图 */
+  .intro-box {
+    text-align: center;
+
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* 商品类型 & 品牌选单 */
+  .menu-box {
+
+  }
+
+  /* 页面路径 & 排序  */
+  .path-sort-box {
+    text-align: left;
+    height: 20px;
+
+    .left-box {
+      float: left;
+    }
+
+    .right-box {
+      float: right;
+
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  /* 商品列表  */
+  .product-items-box {
+    .box {
+      img {
+        width: 100%;
+        margin: 7.5px auto 7.5px auto;
+      }
+    }
+
+    .product-info {
+      text-align: left;
+      line-height: 14px;
+      min-height: 55px;
+    }
+  }
+}
+
+/*===== 商品信息区块设置 ======*/
+.product-show-box {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 0 100px 0;
+
+  a {
+    color: #666; //连结字体颜色
+  }
+
+  /* 图片-鼠标滑动效果 */
+  a:hover {
+    color: #0070DE !important;
+    img {
+      opacity: 0.75;
+    }
+  }
+
+  /* 按钮 */
+  .btn {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+  }
+
+  /* 按钮-鼠标效果 */
+  .btn:hover,
+  .btn:focus {
+    color: #0070DE;
+  }
+
+  /* 广告图 */
+  .intro-box {
+    text-align: center;
+
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* 商品类型 & 品牌选单 */
+  .menu-box {
+  }
+
+  /* 页面路径 & 排序 */
+  .path-sort-box {
+    text-align: left;
+    height: 20px;
+
+    .left-box {
+      float: left; //向左浮动
+    }
+
+    .right-box {
+      float: right; //向右浮动
+
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  /* 页面左侧：产品图片 */
+  .product-image-box {
+    text-align: left;
+
+    /* 显示产品图片 - 大图 */
+    .main-image {
+      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+        max-width: 700px;
+      }
+    }
+
+    /* 显示产品图片 - 其他小图 */
+    .other-image {
+      margin: 0px 0px 10px 0px;
+
+      img {
+        width: 90%;
+        max-width: 200px;
+      }
+
+    }
+
+  }
+
+  /* 页面右侧：产品主要资讯及功能 */
+  .product-main-box {
+    text-align: left;
+
+    /* 产品标题 */
+    .title {
+      margin-bottom: auto;
+    }
+
+    /* 产品價錢 */
+    .price {
+    }
+
+    /* 产品规格 */
+    .specification{
+    }
+
+    .row {
+      margin: 0px 5px 0px 5px;
+
+      /* 收藏 */
+      .favorite {
+        float: left; //向左浮动
+      }
+
+      /* 社群分享 */
+      .share {
+        float: right; //向右浮动
+      }
+
+    }
+
+    /* 购买按钮 */
+    .purchase {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* 推荐商品 * 3 */
+    .recommend {
+      text-align: center; //置中
+
+      hr.recommend-title {
+        margin: 80px auto 20px auto;
+        max-width: 250px;
+        border-bottom: 0.5px double #8c8b8b !important;
+      }
+
+      hr.recommend-title:after {
+        content: "为您推荐";
+        display: inline-block;
+        position: relative;
+        top: -14px;
+        padding: 0 10px;
+        background: #fff;
+        font-size: 18px;
+      }
+
+      img {
+        margin-top: 20px;
+        max-width: 100px;
+        max-height: 150px;
+      }
+    }
+  }
+}
