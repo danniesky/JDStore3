@@ -17,6 +17,7 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
 html {
   min-height: 100%;
   position: relative;//设定为相对位置
@@ -53,70 +54,131 @@ body {
 }
 
 
-   h2{
-     font-size: 10px;
-     letter-spacing: 10px;
-     margin-bottom: 50px;
-     font-weight: 10;
-     text-align: center;
-     padding-top: 12px; //---sepatate pic and text---//
+h2{
+ font-size: 10px;
+ letter-spacing: 10px;
+ margin-bottom: 50px;
+ font-weight: 10;
+ text-align: center;
+ padding-top: 12px; //---sepatate pic and text---//
+}
+
+
+/*===== Navbar 导览列 ======*/
+.navbar-default {
+ background: rgba(0,0,0,0.5); //半透明背景
+
+ /* 文字连结 */
+ a {
+   color: #fff !important;
+ }
+
+ /* 连结-鼠标效果 */
+ a:hover,
+ a:active,
+ a:focus {
+   color: #0070DE !important;
+ }
+
+ /*===== 导览列滑动特效 ======*/
+ &.scroll_navbar {
+   background-color: #fff; //背景颜色
+
+   /* 文字连结 */
+   a {
+     color: #000 !important;
    }
 
+   /* 连结-鼠标效果 */
+   a:hover,
+   a:active,
+   a:focus {
+     color: #0070DE !important;
+   }
+ }
 
-   /*===== Navbar 导览列 ======*/
-   .navbar-default {
-     background: rgba(0,0,0,0.5); //半透明背景
+ /*===== Logo ======*/
+ .logo-box {
+   margin-right: 15px;
+   font-size: 12px;
+ }
 
-     /* 文字连结 */
+ /*===== Dropdown ======*/
+ .dropdown-menu{
+   background-color: #fff;
+   min-width: 175px;
+
+   /* 连结 */
+   a {
+     color: #000 !important;
+     padding: 8px 17px;
+   }
+
+   /* 连结-鼠标滑动效果 */
+   a:hover {
+     background-color: #f0f0f0;
+     color: #0070DE !important;
+   }
+ }
+
+ /* 下拉选单三角箭头 */
+ .dropdown-menu:before {
+   content: "";
+   border-bottom: 10px solid #fff;
+   border-right: 10px solid transparent;
+   border-left: 10px solid transparent;
+   position: absolute;
+   top: -10px;
+   right: 16px;
+   z-index: 10;
+ }
+
+ /* 搜索栏 */
+ .search-box {
+   margin-top: 7.5px;
+
+   /* 输入框 */
+   input {
+     height: 35px;
+   }
+
+   /* 按钮 */
+   button {
+     padding: 5px 10px 5px 10px;
+     height: 35px;
+   }
+ }
+}
+
+   /*===== Footer 页脚 ======*/
+   .footer{
+     text-align: center;
+     min-height: 175px; //最小高度
+     background-color: #222;
+     padding: 15px 0;
+     color: #fff;
+
+     /* 标题 */
+     h4 {
+       font-size: 16px;
+       margin-top: 25px;
+       margin-bottom: 15px;
+     }
+
+     /* 连结 */
      a {
-       color: #fff !important;
+       text-decoration:none;
+       color: #ddd;
      }
 
      /* 连结-鼠标效果 */
      a:hover,
      a:active,
      a:focus {
-       color: #0070DE !important;
-     }
-
-   /*===== Logo ======*/
-.logo-box {
-  margin-right: 15px;
-  font-size: 20px;
-}
-
-
-
-/*===== Dropdown ======*/
-   .dropdown-menu{
-     background-color: #fff;
-     min-width: 175px;
-
-     /* 连结 */
-     a {
-       color: #000 !important;
-       padding: 8px 17px;
-     }
-
-     /* 连结-鼠标滑动效果 */
-     a:hover {
-       background-color: #f0f0f0;
-       color: #0070DE !important;
+       color: #0070DE;
      }
    }
 
-   /* 下拉选单三角箭头 */
-   .dropdown-menu:before {
-     content: "";
-     border-bottom: 10px solid #fff;
-     border-right: 10px solid transparent;
-     border-left: 10px solid transparent;
-     position: absolute;
-     top: -10px;
-     right: 16px;
-     z-index: 10;
-   }
-}
 
 //----test----//
 .block-content {
@@ -270,49 +332,6 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
-//---------Navbar---------
-
-.navbar-default {
-    background-color: white;  //背景颜色
-    border-color: white; //底线颜色
-    margin-bottom: 0;  //底部 margin 不撑开距离
-    border-radius: 0;  //圆角为0
-}
-
-.navbar-default .navbar-brand {
-    background-color:  white;  //home happy 背景颜色
-    padding: 10px 15px; //上下10px，左右15px
-    line-height: 30px;  //文字行高
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    background-color: #233140; //鼠标放置在链接上的文字颜色
-    background-color: transparent;  //鼠标放置在链接上的背景颜色，这里设为透明
-}
-
-.navbar-default .navbar-nav > li > a {
-        background-color: white; //右端颜色
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-        background-color: #233140;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #FF6F00; //product字体颜色
-    background-color: white; //product背景颜色
-}
-
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover {
-    background-color: #233140;
-  }
 
   //---------carousel-inner---------
 

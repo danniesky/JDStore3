@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require_tree .
 
+
 $(document).on('turbolinks:load', function() {
   /*增加数量*/
   $("#quantity-plus").click(function(e) {
